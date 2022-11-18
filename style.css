@@ -1,0 +1,122 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    background-color: black;
+}
+
+.parent{
+    display: flex;
+}
+
+#heading{
+    background-color: black;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 320px;
+    animation-name: heading;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+}
+
+.circle{
+    width: 80px;
+    height: 80px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background: linear-gradient(red, blue);
+    animation-name: movingcircle;
+    animation-iteration-count: infinite;
+    animation-duration: 5s;
+    animation-timing-function: ease;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+  @keyframes movingcircle{
+    0%{
+        transform: rotate(360deg);
+        top: 0px;
+        left: 0px;
+        background: linear-gradient(black, yellow);
+    }
+
+    25%{
+        transform: rotate(360deg);
+        top: 0px;
+        left: -95%;
+        background: linear-gradient(black, rgb(247, 0, 255));
+    }
+
+    50%{
+        transform: rotate(360deg);
+        top: 600px;
+        left: -95%;
+        background: linear-gradient(black, rgb(0, 255, 208));
+    }
+
+    75%{
+        transform: rotate(360deg);
+        top: 600px;
+        left: 0px;
+        background: linear-gradient(black, rgb(7, 244, 78));
+    }
+}
+
+  @keyframes heading{
+    from{
+        transform: scale(0);
+    }
+
+    to{
+        transform: scale(1.5) rotate(360deg);
+    }
+}
+
+@media (min-width: 320px) and (max-width: 600px){
+    @keyframes movingcircle{
+        0%{
+            transform: rotate(360deg);
+            top: 0px;
+            left: 0px;
+            background: linear-gradient(black, yellow);
+        }
+    
+        25%{
+            transform: rotate(360deg);
+            top: 0px;
+            left: -270px;
+            background: linear-gradient(black, rgb(247, 0, 255));
+        }
+    
+        50%{
+            transform: rotate(360deg);
+            top: 280px;
+            left: -270px;
+            background: linear-gradient(black, rgb(0, 255, 208));
+        }
+    
+        75%{
+            transform: rotate(360deg);
+            top: 280px;
+            left: 0px;
+            background: linear-gradient(black, rgb(7, 244, 78));
+        }
+    }
+
+    #heading{
+        margin-top: 120px;
+    }
+
+    @keyframes heading{
+        from{
+            transform: scale(0);
+        }
+    
+        to{
+            transform: scale(0.6);
+        }
+    }
+}
